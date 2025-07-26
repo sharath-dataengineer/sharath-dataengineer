@@ -8,3 +8,5 @@
 
 📫 Reach me at: rama.sharathchandra91@gmail.com
 
+Linkedin : https://www.linkedin.com/in/sharathchandrarama/
+
