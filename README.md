@@ -56,7 +56,7 @@ The **Iceberg** work here represents genuine operational knowledge (the health m
 
 **Databricks** — I understand the platform deeply: Delta Live Tables, Unity Catalog, Databricks Runtime optimizations, cluster policies. The production systems here ran on EMR. Given a greenfield today, Databricks would be a serious candidate depending on team size, catalog requirements, and the org's cloud investment.
 
-**Monte Carlo** — I have evaluated it for data observability and understand the platform (freshness/volume monitors, field-level lineage, circuit breakers). The observability in this portfolio was built custom — the [pipeline-health-monitor](../pipeline-health-monitor/) and the LLM-augmented DQ system — because the org's requirements and scale made custom tooling the right call. Monte Carlo would be my first consideration for a team that wants production-grade observability without building it.
+**Monte Carlo** — I have evaluated it for data observability and understand the platform (freshness/volume monitors, field-level lineage, circuit breakers). The observability in this portfolio was built custom — the [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) and the LLM-augmented DQ system — because the org's requirements and scale made custom tooling the right call. Monte Carlo would be my first consideration for a team that wants production-grade observability without building it.
 
 I write this here because hiring managers can tell when a resume is padded with "familiar with" versions of every trending technology. The stack I have operated at scale is the stack worth interrogating me on.
 
@@ -71,12 +71,12 @@ I split this into two tiers — what I have owned in production with real incide
 | Architecture | What I Have Actually Owned |
 |---|---|
 | **Medallion Lakehouse (CDC/SCD2)** | Bronze/Silver/Gold on S3 + EMR Serverless; SCD2 star-schema marts; advanced partitioning and merge strategies — 40% faster runtimes, 30% cost reduction at Intuit scale |
-| **Declarative Config-Driven Pipelines** | 74 logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](../enterprise-data-foundation/) |
+| **Declarative Config-Driven Pipelines** | 74 logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation) |
 | **Real-Time Kafka Ingestion** | Streaming pipelines processing millions of daily transactions at peak load; sub-5-minute latency; 100+ stakeholders across product, analytics, and leadership |
 | **Multi-System Funnel Attribution** | 7-day first-touch attribution across 5 source systems with no shared key — contact center → CRM → sales booking |
 | **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); 50% reduction in data incidents; test coverage lifted from ~30% to >90% of active pipelines |
 | **LLM-Augmented Observability** | Event-driven failure classification with LLM-generated root cause advisory — 70% faster incident resolution, eliminating manual log triage |
-| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context; 60% DQ triage time reduction, 50% incident reduction — documented in [pipeline-health-monitor §10](../pipeline-health-monitor/) |
+| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context; 60% DQ triage time reduction, 50% incident reduction — documented in [pipeline-health-monitor §10](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
 | **FinOps & Cost Attribution** | EMR FinOps dashboards with per-job and per-partition cost attribution; $50K+ annual cloud savings |
 
 ### Design-Level Expertise — Can Architect and Defend, Not Production-Owned at This Scale
@@ -106,7 +106,7 @@ A data platform is not a collection of pipelines — it is a product with intern
 
 ### Where This Shows Up in Practice
 
-The config-driven pipeline framework in [`enterprise-data-foundation`](../enterprise-data-foundation/) is the clearest example: a single framework definition powers 70+ production jobs. A new domain table is a new config file and a new DQ spec — no bespoke Spark code, no platform team involvement.
+The config-driven pipeline framework in [`enterprise-data-foundation`](https://github.com/sharath-dataengineer/enterprise-data-foundation) is the clearest example: a single framework definition powers 70+ production jobs. A new domain table is a new config file and a new DQ spec — no bespoke Spark code, no platform team involvement.
 
 Architecture reviews I run produce ADRs, not verbal agreements. Every design decision for the ERC Data Foundation is documented with context, decision, and consequences — so engineers who join two years later understand *why* the merge key is what it is, not just *what* it is. This directly reduces the time I spend re-explaining old decisions and increases the team's ability to evolve the system confidently.
 
@@ -375,7 +375,7 @@ Modernized legacy finance data ingestion processes with parameterized, reusable 
 Architected a cloud-native data warehouse on AWS Redshift; built ETL pipelines using Glue, EMR, and Spark for financial and legal datasets previously running on nightly batch cycles. Delivered near-real-time reporting with 35% faster pipeline runtimes and 25% compute cost reduction.
 
 **Financial-Software SaaS — 2023–present (Intuit)**
-The most technically demanding role: CDC-aware medallion lakehouse, real-time Kafka pipelines, LLM-augmented observability, org-wide standards definition. The production case studies in this portfolio are from this role. Full narrative in [enterprise-data-foundation](../enterprise-data-foundation/), [kafka-streaming-case-study](../kafka-streaming-case-study/), and [pipeline-health-monitor](../pipeline-health-monitor/).
+The most technically demanding role: CDC-aware medallion lakehouse, real-time Kafka pipelines, LLM-augmented observability, org-wide standards definition. The production case studies in this portfolio are from this role. Full narrative in [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation), [kafka-streaming-case-study](https://github.com/sharath-dataengineer/kafka-streaming-case-study), and [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor).
 
 ---
 
