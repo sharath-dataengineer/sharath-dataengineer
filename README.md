@@ -8,7 +8,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/Experience-11%2B%20Years-0A66C2?style=flat-square" alt="Experience"/>
-  <img src="https://img.shields.io/badge/Spark%20Pipelines-60%2B%20Production-E25A1C?style=flat-square&logo=apachespark&logoColor=white" alt="Spark"/>
+  <img src="https://img.shields.io/badge/Spark%20Pipelines-150%2B%20Production-E25A1C?style=flat-square&logo=apachespark&logoColor=white" alt="Spark"/>
   <img src="https://img.shields.io/badge/Pipeline%20Runtime%20Improvement-40%25-22C55E?style=flat-square" alt="ETL"/>
   <img src="https://img.shields.io/badge/Cloud%20Cost%20Savings-%2450K%2B%2Fyear-F59E0B?style=flat-square" alt="Cost"/>
   <img src="https://img.shields.io/badge/Incident%20Resolution-70%25%20Faster-8B5CF6?style=flat-square" alt="Incident"/>
@@ -20,7 +20,7 @@
 
 ## Professional Summary
 
-Data Engineer with 11+ years architecting multi-terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. I have built and owned 60+ production Spark pipelines, architected CDC-aware medallion lakehouses, delivered real-time Kafka pipelines serving 100+ stakeholders at sub-5-minute latency, and built an LLM-powered observability tool that cut incident resolution time by 70%. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
+Data Engineer with 11+ years architecting multi-terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. I have built and owned 150+ production Spark pipelines, architected CDC-aware medallion lakehouses, delivered real-time Kafka pipelines serving 500+ stakeholders at sub-5-minute latency, and built an LLM-powered observability tool that cut incident resolution time by 70%. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
 
 ---
 
@@ -72,7 +72,7 @@ I split this into two tiers — what I have owned in production with real incide
 |---|---|
 | **Medallion Lakehouse (CDC/SCD2)** | Bronze/Silver/Gold on S3 + EMR Serverless; SCD2 star-schema marts; advanced partitioning and merge strategies — 40% faster runtimes, 30% cost reduction at Intuit scale |
 | **Declarative Config-Driven Pipelines** | 74 logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation) |
-| **Real-Time Kafka Ingestion** | Streaming pipelines processing millions of daily transactions at peak load; sub-5-minute latency; 100+ stakeholders across product, analytics, and leadership |
+| **Real-Time Kafka Ingestion** | Streaming pipelines processing millions of daily transactions at peak load; sub-5-minute latency; 500+ stakeholders across product, analytics, and leadership |
 | **Multi-System Funnel Attribution** | 7-day first-touch attribution across 5 source systems with no shared key — contact center → CRM → sales booking |
 | **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); 50% reduction in data incidents; test coverage lifted from ~30% to >90% of active pipelines |
 | **LLM-Augmented Observability** | Event-driven failure classification with LLM-generated root cause advisory — 70% faster incident resolution, eliminating manual log triage |
@@ -118,7 +118,7 @@ The `pipeline-health-monitor` LightGBM risk predictor was a design I handed off 
 
 | Metric | Result | Context |
 |---|---|---|
-| Production Spark pipelines owned | **60+** | Across financial, CRM, clickstream, contact center, and billing domains |
+| Production Spark pipelines owned | **150+** | Across financial, CRM, clickstream, contact center, and billing domains |
 | Pipeline failure reduction | **−40%** | Defined and drove org-wide adoption of partitioning, merge, and SCD2 standards |
 | Pipeline runtime improvement | **40% (most recent role)** | CDC-aware medallion lakehouse + Spark execution tuning + partition strategy on EMR Serverless |
 | Compute cost reduction | **30%** | EMR Serverless right-sizing, shuffle reduction, partition strategy |
@@ -127,7 +127,7 @@ The `pipeline-health-monitor` LightGBM risk predictor was a design I handed off 
 | Data incident reduction | **−50%** | SLA-driven DQ gates across batch and streaming layers |
 | DQ triage time | **−60%** | LLM-generated anomaly explanations + auto-calibrated statistical thresholds |
 | Pipeline test coverage | **30% → 90%+** | Test-driven pipeline design rolled out org-wide |
-| Stakeholders served | **100+** | Near-real-time Kafka dashboards across product, analytics, and leadership |
+| Stakeholders served | **500+** | Near-real-time Kafka dashboards across product, analytics, and leadership |
 | Engineering scope | Architecture reviews, org-wide standards, mentorship | Standards now adopted across multiple data engineering teams |
 
 ---
@@ -170,7 +170,7 @@ An event-driven pipeline health monitor with two paths: immediate failure alerti
 ![Streaming](https://img.shields.io/badge/Spark%20Structured%20Streaming-Sub--5min%20Latency-E25A1C?style=flat-square)
 ![DQ](https://img.shields.io/badge/Inline%20DQ-50%25%20Incident%20Reduction-22C55E?style=flat-square)
 
-Real-time Kafka streaming pipelines processing millions of transactions per day at peak-season load — with sub-5-minute end-to-end latency serving 100+ stakeholders. The defining challenge: peak volume spikes 5–8× daily average, and the 5-minute SLA cannot slip when leadership is watching live dashboards during the highest-stakes window of the year. Covers partition sizing for peak, micro-batch tuning, exactly-once semantics via idempotent upsert, and inline DQ that routes bad rows to quarantine rather than crashing the stream.
+Real-time Kafka streaming pipelines processing millions of transactions per day at peak-season load — with sub-5-minute end-to-end latency serving 500+ stakeholders. The defining challenge: peak volume spikes 5–8× daily average, and the 5-minute SLA cannot slip when leadership is watching live dashboards during the highest-stakes window of the year. Covers partition sizing for peak, micro-batch tuning, exactly-once semantics via idempotent upsert, and inline DQ that routes bad rows to quarantine rather than crashing the stream.
 
 </td>
 </tr>
