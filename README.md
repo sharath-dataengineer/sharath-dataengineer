@@ -32,10 +32,10 @@ Data Engineer with 11+ years architecting multi-terabyte lakehouse platforms on 
 | **Lakehouse & Storage** | Apache Iceberg, Delta Lake, Amazon Redshift, Amazon S3, Parquet, ORC |
 | **Orchestration** | Apache Airflow, Kubernetes (K8s), Amazon EMR |
 | **Cloud Infrastructure** | AWS (EMR, Redshift, S3, Glue, Lambda, IAM, VPC), Terraform |
-| **Data Modeling** | Dimensional modeling, Data Vault 2.0, medallion architecture, OBT, wide tables |
+| **Data Modeling** | Dimensional modeling, medallion architecture, wide tables |
 | **Data Quality & Governance** | Data contracts, schema evolution, lineage tracking, OpenMetadata, SLAs |
 | **GenAI for Data Engineering** | LLM-powered metadata assistants, NL-to-SQL, automated RCA, drift detection |
-| **Languages** | Python, SQL, Scala (Spark), Bash |
+| **Languages** | Python, SQL, Bash |
 | **Developer Tooling** | dbt, Great Expectations, Pytest, Docker |
 
 ---
