@@ -76,7 +76,7 @@ I split this into two tiers — what I have owned in production with real incide
 | **Multi-System Funnel Attribution** | 7-day first-touch attribution across 5 source systems with no shared key — contact center → CRM → sales booking |
 | **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); 50% reduction in data incidents; test coverage lifted from ~30% to >90% of active pipelines |
 | **LLM-Augmented Observability** | Event-driven failure classification with LLM-generated root cause advisory — 70% faster incident resolution, eliminating manual log triage |
-| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context; 60% DQ triage time reduction, 50% incident reduction — documented in [pipeline-health-monitor §10](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
+| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context; 60% DQ triage time reduction, 50% incident reduction — documented in [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
 | **FinOps & Cost Attribution** | EMR FinOps dashboards with per-job and per-partition cost attribution; $50K+ annual cloud savings |
 
 ### Design-Level Expertise — Can Architect and Defend, Not Production-Owned at This Scale
