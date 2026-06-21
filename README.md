@@ -20,31 +20,15 @@
 
 ## Professional Summary
 
-Data Engineer with 11+ years architecting 60+ terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. I have built and owned 150+ production Spark pipelines, architected CDC-aware medallion lakehouses, delivered real-time Kafka pipelines serving 50+ stakeholders at sub-5-minute latency, and built an LLM-powered observability tool that cut incident resolution time by 70%. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
+Data Engineer with 11+ years architecting 60+ terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
 
 ---
 
-## Technical Expertise
-
-| Domain | Technologies & Patterns |
-|---|---|
-| **Distributed Processing** | Apache Spark (Structured Streaming, Spark SQL, RDD), Kafka, Apache Flink |
-| **Lakehouse & Storage** | Apache Iceberg, Delta Lake, Amazon Redshift, Amazon S3, Parquet, ORC |
-| **Orchestration** | Apache Airflow, Kubernetes (K8s), Amazon EMR |
-| **Cloud Infrastructure** | AWS (EMR, Redshift, S3, Glue, Lambda, IAM, VPC), Terraform |
-| **Data Modeling** | Dimensional modeling, medallion architecture, wide tables |
-| **Data Quality & Governance** | Data contracts, schema evolution, lineage tracking, OpenMetadata, SLAs |
-| **GenAI for Data Engineering** | LLM-powered metadata assistants, NL-to-SQL, automated RCA, drift detection |
-| **Languages** | Python, SQL, Bash |
-| **Developer Tooling** | dbt, Great Expectations, Pytest, Docker |
-
----
-
-## Production Experience vs. Architectural Depth
+## Stack
 
 Engineers who claim everything as production experience aren't being honest. Here's where I draw the line.
 
-| Operated in Production — Real incidents, real metrics, real opinions | Architectural Depth — Can design, evaluate, and defend in a review |
+| Operated in Production — real incidents, real metrics, real opinions | Architectural Depth — can design, evaluate, and defend in a review |
 |---|---|
 | Apache Spark (EMR Serverless + EC2), PySpark, Spark Structured Streaming | Apache Flink — stateful streaming, exactly-once checkpointing, watermark semantics |
 | Apache Kafka — peak-load ingestion, partition sizing, exactly-once upsert | Databricks — Delta Live Tables, Unity Catalog, Runtime optimizations, cluster policies |
@@ -53,58 +37,33 @@ Engineers who claim everything as production experience aren't being honest. Her
 | Delta Lake — schema evolution, ACID writes, transaction log, Z-ordering | dbt — marts, lineage, testing patterns; would reach for it on a greenfield today |
 | AWS EMR, Glue, Redshift, S3, Lambda, Kinesis | Monte Carlo — freshness/volume monitors, field-level lineage, circuit breakers |
 | LLM tooling — Claude API, RAG pipelines, LLM-based RCA and DQ observability | Terraform, Kubernetes — infrastructure and platform engineering patterns |
+| Python, SQL, Bash | Data Mesh, ML Platform / Feature Store — design-level depth, documented in playbooks |
 
 ---
 
 ## Architecture Expertise
 
-I split this into two tiers — what I have owned in production with real incidents and real metrics, and what I can design and defend in an architecture review but have not operated at scale.
-
 ### Built and Operated in Production
 
 | Architecture | What I Have Actually Owned |
 |---|---|
-| **Medallion Lakehouse (CDC/SCD2)** | Bronze/Silver/Gold on S3 + EMR Serverless; SCD2 star-schema marts; advanced partitioning and merge strategies — 40% faster runtimes, 30% cost reduction at Intuit scale |
+| **Medallion Lakehouse (CDC/SCD2)** | Bronze/Silver/Gold on S3 + EMR Serverless; SCD2 star-schema marts; advanced partitioning and merge strategies |
 | **Declarative Config-Driven Pipelines** | 74 logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation) |
-| **Real-Time Kafka Ingestion** | Streaming pipelines processing millions of daily transactions at peak load; sub-5-minute latency; 50+ stakeholders across product, analytics, and leadership |
+| **Real-Time Kafka Ingestion** | Streaming pipelines at peak load; sub-5-minute latency; 50+ stakeholders across product, analytics, and leadership |
 | **Multi-System Funnel Attribution** | 7-day first-touch attribution across 5 source systems with no shared key — contact center → CRM → sales booking |
-| **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); 50% reduction in data incidents; test coverage lifted from ~30% to >90% of active pipelines |
-| **LLM-Augmented Observability** | Event-driven failure classification with LLM-generated root cause advisory — 70% faster incident resolution, eliminating manual log triage |
-| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context; 60% DQ triage time reduction, 50% incident reduction — documented in [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
-| **FinOps & Cost Attribution** | EMR FinOps dashboards with per-job and per-partition cost attribution; $50K+ annual cloud savings |
+| **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); test coverage lifted from ~30% to >90% of active pipelines |
+| **LLM-Augmented Observability** | Event-driven failure classification with LLM-generated root cause advisory — eliminates manual log triage |
+| **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context — documented in [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
+| **FinOps & Cost Attribution** | EMR FinOps dashboards with per-job and per-partition cost attribution |
 
 ### Design-Level Expertise — Can Architect and Defend, Not Production-Owned at This Scale
 
 | Architecture | Depth |
 |---|---|
-| **Data Mesh** | Domain ownership model, federated governance, data product contracts, self-serve infrastructure — documented in playbook, not operated |
-| **ML Platform / Feature Store** | Feature store design, training/serving skew prevention, feature freshness SLAs — design knowledge |
-| **Customer 360** | Identity graph design, behavioral + CRM + transactional unification — adjacent to production work; not owned end to end |
-| **Security** | Column-level encryption, row-level access policies, audit logging, VPC-isolated compute — implemented at component level, not platform-wide ownership |
-
----
-
-## Platform Engineering Expertise
-
-A data platform is not a collection of pipelines — it is a product with internal customers, SLAs, and a developer experience that either accelerates or blocks the engineering organization.
-
-**Golden Paths:** I design self-service golden paths that let domain teams onboard data products without requiring platform team involvement for every deployment. This means standardized templates, automated validation, and contract-based interfaces.
-
-**Observability by Default:** Every pipeline I design emits freshness, volume, schema, and lineage metadata from day one. Observability is not a layer added afterward — it is the scaffolding the pipeline is built on.
-
-**Cost Attribution:** Cloud cost is not a platform concern — it is an organizational one. I build FinOps-aware platforms where every compute dollar is attributed to a domain, a team, and a business outcome.
-
-**Architecture Reviews:** I run structured architecture reviews that produce Architectural Decision Records (ADRs), not just verbal sign-offs. Decisions are documented, dated, and linked to the systems they govern.
-
-**Developer Experience:** I measure platform success by time-to-first-pipeline for new data engineers, not by the number of jobs running. Friction in the platform is a bug, not a feature request.
-
-### Where This Shows Up in Practice
-
-The config-driven pipeline framework in [`enterprise-data-foundation`](https://github.com/sharath-dataengineer/enterprise-data-foundation) is the clearest example: a single framework definition powers 70+ production jobs. A new domain table is a new config file and a new DQ spec — no bespoke Spark code, no platform team involvement.
-
-Architecture reviews I run produce ADRs, not verbal agreements. Every design decision for the ERC Data Foundation is documented with context, decision, and consequences — so engineers who join two years later understand *why* the merge key is what it is, not just *what* it is. This directly reduces the time I spend re-explaining old decisions and increases the team's ability to evolve the system confidently.
-
-The `pipeline-health-monitor` LightGBM risk predictor was a design I handed off to a junior engineer to implement after writing the feature extraction spec and the baseline management design. The handoff artifact — a design doc with the feature table, the training approach, and the policy tier thresholds — was detailed enough that the implementation proceeded without daily check-ins. That is the kind of documentation I try to write by default.
+| **Data Mesh** | Domain ownership model, federated governance, data product contracts, self-serve infrastructure — documented in playbook |
+| **ML Platform / Feature Store** | Feature store design, training/serving skew prevention, feature freshness SLAs |
+| **Customer 360** | Identity graph design, behavioral + CRM + transactional unification |
+| **Security** | Column-level encryption, row-level access policies, audit logging, VPC-isolated compute |
 
 ---
 
@@ -114,7 +73,7 @@ The `pipeline-health-monitor` LightGBM risk predictor was a design I handed off 
 |---|---|---|
 | Production Spark pipelines owned | **150+** | Across financial, CRM, clickstream, contact center, and billing domains |
 | Pipeline failure reduction | **−40%** | Defined and drove org-wide adoption of partitioning, merge, and SCD2 standards |
-| Pipeline runtime improvement | **40% (most recent role)** | CDC-aware medallion lakehouse + Spark execution tuning + partition strategy on EMR Serverless |
+| Pipeline runtime improvement | **40%** | CDC-aware medallion lakehouse + Spark execution tuning + partition strategy on EMR Serverless |
 | Compute cost reduction | **30%** | EMR Serverless right-sizing, shuffle reduction, partition strategy |
 | Annual cloud savings | **$50K+** | FinOps dashboards with per-job cost attribution enabling targeted spend reduction |
 | Incident resolution speed | **70% faster** | LLM-powered observability tool eliminating manual log triage |
@@ -122,7 +81,6 @@ The `pipeline-health-monitor` LightGBM risk predictor was a design I handed off 
 | DQ triage time | **−60%** | LLM-generated anomaly explanations + auto-calibrated statistical thresholds |
 | Pipeline test coverage | **30% → 90%+** | Test-driven pipeline design rolled out org-wide |
 | Stakeholders served | **50+** | Near-real-time Kafka dashboards across product, analytics, and leadership |
-| Engineering scope | Architecture reviews, org-wide standards, mentorship | Standards now adopted across multiple data engineering teams |
 
 ---
 
@@ -248,63 +206,40 @@ An LLM-powered metadata assistant: automated lineage discovery from code and que
 
 ---
 
-## Technology Stack
-
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=postgresql&logoColor=white" alt="SQL"/>
-  <img src="https://img.shields.io/badge/Apache%20Spark-E25A1C?style=flat-square&logo=apachespark&logoColor=white" alt="Spark"/>
-  <img src="https://img.shields.io/badge/Apache%20Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white" alt="Kafka"/>
-  <img src="https://img.shields.io/badge/Apache%20Airflow-017CEE?style=flat-square&logo=apacheairflow&logoColor=white" alt="Airflow"/>
-  <img src="https://img.shields.io/badge/Apache%20Iceberg-0A66C2?style=flat-square" alt="Iceberg"/>
-  <img src="https://img.shields.io/badge/Delta%20Lake-003366?style=flat-square" alt="Delta Lake"/>
-  <img src="https://img.shields.io/badge/Amazon%20EMR-FF9900?style=flat-square&logo=amazonaws&logoColor=white" alt="EMR"/>
-  <img src="https://img.shields.io/badge/Amazon%20Redshift-8C4FFF?style=flat-square&logo=amazonredshift&logoColor=white" alt="Redshift"/>
-  <img src="https://img.shields.io/badge/Amazon%20S3-569A31?style=flat-square&logo=amazons3&logoColor=white" alt="S3"/>
-  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white" alt="Kubernetes"/>
-  <img src="https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white" alt="Terraform"/>
-  <img src="https://img.shields.io/badge/dbt-FF694B?style=flat-square&logo=dbt&logoColor=white" alt="dbt"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/>
-</p>
-
-**Data Architecture Patterns:**
-<p>
-  <img src="https://img.shields.io/badge/Lakehouse%20Architecture-Medallion%20%7C%20Data%20Vault-0A66C2?style=flat-square" alt="Lakehouse"/>
-  <img src="https://img.shields.io/badge/Streaming-Exactly%20Once%20%7C%20CDC-E25A1C?style=flat-square" alt="Streaming"/>
-  <img src="https://img.shields.io/badge/Data%20Mesh-Federated%20Governance-8B5CF6?style=flat-square" alt="Data Mesh"/>
-  <img src="https://img.shields.io/badge/Customer%20360-Identity%20Resolution-22C55E?style=flat-square" alt="Customer 360"/>
-  <img src="https://img.shields.io/badge/GenAI%20for%20Data-LLM%20%7C%20NL--to--SQL%20%7C%20RCA-F59E0B?style=flat-square" alt="GenAI"/>
-</p>
-
----
-
 ## Engineering Leadership
 
 The work that had the highest organizational leverage was not the pipelines I built — it was the standards I defined that other teams adopted, and the engineers I worked with who became more capable because of shared patterns.
 
-### Org-Wide Data Engineering Standards — 40% Pipeline Failure Reduction
+### Org-Wide Standards — 40% Pipeline Failure Reduction
 
-At Intuit, each data engineering team was solving the same problems independently: how to partition a table, how to handle SCD2 merges, how to structure incremental loads, how to write DQ checks. The result was fragmentation: teams with different merge strategies, different partitioning patterns, and different DQ approaches — all producing pipelines with different failure modes.
+At Intuit, each data engineering team was solving the same problems independently: how to partition a table, how to handle SCD2 merges, how to structure incremental loads, how to write DQ checks. The result was fragmentation — teams with different merge strategies, different partitioning patterns, and pipelines that failed in unique, tribal-knowledge-dependent ways.
 
-I defined and drove adoption of org-wide standards covering:
+I defined and drove org-wide adoption of:
 
-- **Partitioning strategy** — standard partition key selection guidelines for batch and streaming layers, with documented tradeoffs between query performance and write efficiency
-- **Merge and SCD2 patterns** — a reference implementation for CDC-style merge/upsert (idempotent, business-key-keyed, dynamic partition overwrite) that became the default pattern for new pipelines
-- **Incremental load design** — the watermark-based incremental pattern (self-watermarking on `updated_ts`) documented as a reusable pattern, not just used in one mart
-- **DQ gate standards** — the golden-check pattern (dup/null/reconciliation, blocking on failure) standardized as the minimum bar for any pipeline feeding a downstream consumer
+- **Partitioning strategy** — partition key selection guidelines for batch and streaming layers, with documented tradeoffs between query performance and write efficiency
+- **Merge and SCD2 patterns** — a reference implementation for CDC-style merge/upsert (idempotent, business-key-keyed, dynamic partition overwrite) that became the default for new pipelines
+- **Incremental load design** — the self-watermarking pattern on `updated_ts` documented as a reusable standard, not a one-off
+- **DQ gate standards** — the golden-check pattern (dup/null/reconciliation, blocking on failure) as the minimum bar for any pipeline feeding a downstream consumer
 
-**Outcome:** 40% reduction in pipeline failures across the teams that adopted the standards. The consistency patterns are now used across multiple data engineering teams. New pipelines built to the standard fail in predictable, diagnosable ways — not in unique, one-off modes that require tribal knowledge to debug.
-
-This is the difference between being a strong individual contributor and being a force multiplier. The enterprise-data-foundation was the reference implementation. The standards are what scaled it.
+The [`enterprise-data-foundation`](https://github.com/sharath-dataengineer/enterprise-data-foundation) is the reference implementation. A new domain table is a new config file — no bespoke Spark code, no platform team involvement for every deployment.
 
 ### Mentorship and Technical Enablement
 
-I wrote the `data-engineering-playbook` as the onboarding resource I wished had existed — covering Spark internals, lakehouse design, Kafka architecture, and data modeling theory at book-chapter depth. The goal was to make knowledge that lived in my head transferable to engineers on the team.
+I wrote the [`data-engineering-playbook`](https://github.com/sharath-dataengineer/data-engineering-playbook) as the onboarding resource I wish had existed — covering Spark internals, lakehouse design, Kafka architecture, and data modeling theory at book-chapter depth.
 
-Concrete outcomes:
-- Three engineers with no prior Spark experience were deploying production pipelines within their first month using the config-driven framework and documentation
+- Three engineers with no prior Spark experience deployed production pipelines within their first month using the config-driven framework and documentation
 - Engineers mentored on Spark internals (shuffle, catalyst, memory management) and lakehouse design — topics that typically take 12–18 months of production experience to develop intuition for
-- The LightGBM risk predictor in the pipeline health monitor was designed by me and implemented by a junior engineer working from the feature spec and baseline management design doc — no daily check-ins required
+- The LightGBM risk predictor in the pipeline health monitor was designed by me and implemented by a junior engineer working from the feature spec alone — no daily check-ins required
+
+### Platform Principles I Build Against
+
+**Golden Paths** — self-service templates that let domain teams onboard data products without platform team involvement for every deployment. Friction in the platform is a bug, not a feature request.
+
+**Observability by Default** — every pipeline emits freshness, volume, schema, and lineage metadata from day one. Observability is the scaffolding the pipeline is built on, not a layer added afterward.
+
+**Cost Attribution** — every compute dollar attributed to a domain, a team, and a business outcome. Cost is visible at the point of architectural decision — not discovered in a monthly invoice.
+
+**Architecture Reviews** — produce ADRs, not verbal sign-offs. Decisions are documented with context, rationale, and consequences so engineers two years later understand *why*, not just *what*.
 
 ---
 
@@ -329,22 +264,9 @@ Bad data downstream is almost always caused by a missing constraint upstream. I 
 
 ---
 
-## Current Focus Areas
-
-**Autonomous Data Platform Operations**
-The next frontier in data engineering is not faster pipelines — it is platforms that monitor, diagnose, and remediate themselves. I invest time in patterns for AI-assisted root cause analysis, automated anomaly response, and self-healing pipeline orchestration — extending the observability work in the production case studies toward fully autonomous platform operations.
-
-**Iceberg at Production Scale**
-Apache Iceberg is the right table format for the modern lakehouse, but operational excellence at scale requires tooling that does not yet exist as a standard product. The [`iceberg-health-monitor`](https://github.com/sharath-dataengineer/iceberg-health-monitor) in this portfolio addresses the operational gaps: compaction economics, manifest bloat, snapshot lifecycle management, and partition evolution at scale.
-
-**LLM-Powered Data Infrastructure**
-Metadata management, lineage discovery, and NL-to-SQL are problems where LLMs provide genuine leverage — not just a demo. The [`metadata-copilot`](https://github.com/sharath-dataengineer/metadata-copilot) and the LLM advisory patterns in the pipeline health monitor represent my applied work in this area — making data infrastructure more accessible to analysts and surfacing institutional knowledge that currently lives in Slack threads.
-
----
-
 ## Career Arc
 
-11+ years across five industries and four platform generations. Each role tackled a harder problem than the last — from ETL framework reuse at a large telco, to CDC-aware lakehouses and LLM-augmented observability at Intuit.
+11+ years across five industries and four platform generations. Each role tackled a harder problem than the last.
 
 | Period | Industry | Stack | Key Outcome |
 |---|---|---|---|
@@ -352,24 +274,7 @@ Metadata management, lineage discovery, and NL-to-SQL are problems where LLMs pr
 | 2019–2021 | Insurance | SQL + EDW + AWS | 40% incident turnaround reduction; regulatory EDW |
 | 2021–2022 | Finance data | AWS Glue + EMR + Spark | 30% faster execution; 40% pipeline reusability gain |
 | 2022–2023 | Legal & financial data | Redshift + EMR + Spark | 35% faster pipelines; near-real-time financial datasets |
-| 2023–present | Financial-Software SaaS | Medallion lakehouse + Kafka + LLM tooling | 40% runtime reduction; 70% faster incident resolution |
-
-### What Each Stage Built
-
-**Telecoms — 2014–2019 (Virgin Media)**
-Built reusable ETL frameworks in Informatica PowerCenter and SSIS, integrating billing, customer, and network domains across a large telco. The defining project: migrating legacy Informatica workflows to AWS S3 — my first exposure to cloud-native data movement at scale. Designed relational database models and warehouse schemas supporting BI teams. Reduced development effort by 30% through framework reuse. This is where I developed discipline around parameterized, reusable ETL design — a principle that shows up in every subsequent role.
-
-**Insurance — 2019–2021 (Hanover Insurance)**
-Built and maintained scalable ETL pipelines integrating actuarial, claims, and finance source systems into an enterprise data warehouse. The work that defined this role: writing complex SQL logic to proactively detect and resolve production data discrepancies — before they surfaced in regulatory reports. Reduced incident turnaround time by 40%. This is where I developed the instinct for treating data quality as an operational concern, not a post-hoc cleanup job.
-
-**Finance Data — 2021–2022 (Hewlett Packard Enterprise)**
-Modernized legacy finance data ingestion processes with parameterized, reusable ETL components on AWS — Glue, EMR, Spark. Led data migration and integration efforts across finance systems with zero data loss. Achieved 30% faster execution and 40% improvement in pipeline reusability. This was my first large-scale Spark work and my first experience designing for high-volume loads with explicit partitioning strategies.
-
-**Legal & Financial Data — 2022–2023 (Thomson Reuters)**
-Architected a cloud-native data warehouse on AWS Redshift; built ETL pipelines using Glue, EMR, and Spark for financial and legal datasets previously running on nightly batch cycles. Delivered near-real-time reporting with 35% faster pipeline runtimes and 25% compute cost reduction.
-
-**Financial-Software SaaS — 2023–present (Intuit)**
-The most technically demanding role: CDC-aware medallion lakehouse, real-time Kafka pipelines, LLM-augmented observability, org-wide standards definition. The production case studies in this portfolio are from this role. Full narrative in [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation), [kafka-streaming-case-study](https://github.com/sharath-dataengineer/kafka-streaming-case-study), and [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor).
+| 2023–present | Financial-software SaaS | Medallion lakehouse + Kafka + LLM tooling | 40% runtime reduction; 70% faster incident resolution |
 
 ---
 
