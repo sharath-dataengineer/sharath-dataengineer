@@ -56,7 +56,7 @@ Engineers who claim everything as production experience aren't being honest. Her
 | **LLM-Augmented DQ** | Auto-calibrated statistical thresholds (mean ± 2σ from 30-day partition history); LLM-generated anomaly explanations with upstream context — documented in [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) |
 | **FinOps & Cost Attribution** | EMR FinOps dashboards with per-job and per-partition cost attribution |
 
-### Design-Level Expertise — Can Architect and Defend, Not Production-Owned at This Scale
+### Design & Advisory Depth
 
 | Architecture | Depth |
 |---|---|
