@@ -40,25 +40,19 @@ Data Engineer with 11+ years architecting 60+ terabyte lakehouse platforms on AW
 
 ---
 
-## Stack Notes — What I've Operated vs. What I've Studied
+## Production Experience vs. Architectural Depth
 
-The production systems in this portfolio ran on **Spark on EMR, HOCON-configured declarative pipelines, Parquet/Hive-partitioned S3, and Airflow** — the enterprise default at Intuit at the time. That is the stack I have real incident war stories for, real performance numbers from, and real architectural opinions about.
+Engineers who claim everything as production experience aren't being honest. Here's where I draw the line.
 
-The **Iceberg** work here represents genuine operational knowledge (the health monitor, the compaction economics work, the small-file and manifest-bloat patterns) but I was not running Iceberg as the primary production table format — that migration was designed and in progress. The `iceberg-health-monitor` tool was built specifically because operating Iceberg at scale surfaces gaps that the documentation does not cover.
-
-**dbt** — I have built with it for smaller-scale marts and know the ecosystem well. It was not the primary transformation layer in the large-scale production system documented here, where the config-driven Spark framework served that role. I would reach for dbt on a fresh build today.
-
-**Kubernetes-native Spark** — I understand the architecture (Spark Operator, node selectors, pod templating), have worked with K8s for other services, and the autonomous-data-platform ADRs reference it. Production Spark in the case studies ran on EMR. I have not run Spark-on-K8s in production at the scale described here.
-
-**Apache Flink** — listed in the Technical Expertise table because I understand the architecture (stateful streaming, exactly-once checkpointing, watermark semantics) and have evaluated it for streaming use cases. I have not operated a Flink cluster in production. The streaming work I've done ran on Spark Structured Streaming and Kafka. Flink is on the learning roadmap, not the war stories list.
-
-**Delta Lake** — I have worked with Delta Lake for schema evolution and ACID writes on S3 across multiple roles. The production systems documented here used Parquet with Hive metastore partitioning rather than Delta — the org was already invested in that stack before I joined. I understand the Delta protocol (transaction log, checkpointing, Z-ordering) and would evaluate Delta or Iceberg depending on the compute engine and catalog ecosystem.
-
-**Databricks** — I understand the platform deeply: Delta Live Tables, Unity Catalog, Databricks Runtime optimizations, cluster policies. The production systems here ran on EMR. Given a greenfield today, Databricks would be a serious candidate depending on team size, catalog requirements, and the org's cloud investment.
-
-**Monte Carlo** — I have evaluated it for data observability and understand the platform (freshness/volume monitors, field-level lineage, circuit breakers). The observability in this portfolio was built custom — the [pipeline-health-monitor](https://github.com/sharath-dataengineer/pipeline-health-monitor) and the LLM-augmented DQ system — because the org's requirements and scale made custom tooling the right call. Monte Carlo would be my first consideration for a team that wants production-grade observability without building it.
-
-I write this here because hiring managers can tell when a resume is padded with "familiar with" versions of every trending technology. The stack I have operated at scale is the stack worth interrogating me on.
+| Operated in Production — Real incidents, real metrics, real opinions | Architectural Depth — Can design, evaluate, and defend in a review |
+|---|---|
+| Apache Spark (EMR Serverless + EC2), PySpark, Spark Structured Streaming | Apache Flink — stateful streaming, exactly-once checkpointing, watermark semantics |
+| Apache Kafka — peak-load ingestion, partition sizing, exactly-once upsert | Databricks — Delta Live Tables, Unity Catalog, Runtime optimizations, cluster policies |
+| Apache Airflow — production orchestration, SLA management, complex DAGs | Kubernetes-native Spark — Spark Operator, pod templating, node selectors |
+| Parquet + Hive-partitioned S3 (primary production table format) | Apache Iceberg — compaction economics, manifest bloat, snapshot lifecycle *(deep operational knowledge via [`iceberg-health-monitor`](https://github.com/sharath-dataengineer/iceberg-health-monitor))* |
+| Delta Lake — schema evolution, ACID writes, transaction log, Z-ordering | dbt — marts, lineage, testing patterns; would reach for it on a greenfield today |
+| AWS EMR, Glue, Redshift, S3, Lambda, Kinesis | Monte Carlo — freshness/volume monitors, field-level lineage, circuit breakers |
+| LLM tooling — Claude API, RAG pipelines, LLM-based RCA and DQ observability | Terraform, Kubernetes — infrastructure and platform engineering patterns |
 
 ---
 
