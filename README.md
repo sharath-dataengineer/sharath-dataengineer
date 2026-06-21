@@ -20,7 +20,7 @@
 
 ## Professional Summary
 
-Data Engineer with 11+ years architecting multi-terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. I have built and owned 150+ production Spark pipelines, architected CDC-aware medallion lakehouses, delivered real-time Kafka pipelines serving 50+ stakeholders at sub-5-minute latency, and built an LLM-powered observability tool that cut incident resolution time by 70%. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
+Data Engineer with 11+ years architecting 60+ terabyte lakehouse platforms on AWS and Apache Spark — across financial services, insurance, telecoms, and financial-software SaaS. I set technical direction, define org-wide engineering standards, and drive adoption across data engineering teams. I have built and owned 150+ production Spark pipelines, architected CDC-aware medallion lakehouses, delivered real-time Kafka pipelines serving 50+ stakeholders at sub-5-minute latency, and built an LLM-powered observability tool that cut incident resolution time by 70%. Track record of 30%+ cost takeouts and 30–40% performance gains from architecture-level intervention — not just code tuning.
 
 ---
 
@@ -381,12 +381,10 @@ The most technically demanding role: CDC-aware medallion lakehouse, real-time Ka
 
 ## Contact
 
-I write in depth about data platform architecture, Iceberg operational patterns, and applied GenAI for data engineering. The best way to engage is through the repositories above — open an issue, start a discussion, or review the architecture documentation.
-
 For architecture discussions, technical collaboration, or Data Engineering opportunities:
 
-- **Email:** rama.sharathchandra91@gmail.com
-- **LinkedIn:** [linkedin.com/in/sharathchandrarama](https://www.linkedin.com/in/sharathchandrarama)
+- **Email:** sharathrama.de@gmail.com
+- **LinkedIn:** [linkedin.com/in/sharathde](https://www.linkedin.com/in/sharathde)
 - **GitHub:** Open an issue or start a discussion on any repository above.
 
 ---
