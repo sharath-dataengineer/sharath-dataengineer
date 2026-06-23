@@ -48,7 +48,7 @@ Engineers who claim everything as production experience aren't being honest. Her
 | Architecture | What I Have Actually Owned |
 |---|---|
 | **Medallion Lakehouse (CDC/SCD2)** | Bronze/Silver/Gold on S3 + EMR Serverless; SCD2 star-schema marts; advanced partitioning and merge strategies |
-| **Declarative Config-Driven Pipelines** | 74 logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation) |
+| **Declarative Config-Driven Pipelines** | 150+ logical Spark pipelines as HOCON config; zero bespoke Spark code per table; multi-region/multi-environment parameterization — see [enterprise-data-foundation](https://github.com/sharath-dataengineer/enterprise-data-foundation) |
 | **Real-Time Kafka Ingestion** | Streaming pipelines at peak load; sub-5-minute latency; 50+ stakeholders across product, analytics, and leadership |
 | **Multi-System Funnel Attribution** | 7-day first-touch attribution across 5 source systems with no shared key — contact center → CRM → sales booking |
 | **Data Quality as a Gate** | Golden-check DQ gates blocking publish (not just alerting); test coverage lifted from ~30% to >90% of active pipelines |
@@ -98,7 +98,7 @@ Three repositories documenting systems I built and operated at Intuit. Real inci
 ![Attribution](https://img.shields.io/badge/7--Day%20Attribution-Funnel%20Analytics-0A66C2?style=flat-square)
 ![DQ](https://img.shields.io/badge/DQ%20Gate%20Pattern-50%25%20Incident%20Reduction-22C55E?style=flat-square)
 
-A config-driven Spark-on-EMR analytics foundation stitching contact-center, CRM, clickstream, and sales-booking data into a governed recommendation→revenue funnel. 74 logical pipelines as HOCON config (zero bespoke Spark code per table), 7-day first-touch attribution across 5 source systems with no shared key, DQ gates that block publishing to executive dashboards. Forked across 5–6 environments × 11 regional variants.
+A config-driven Spark-on-EMR analytics foundation stitching contact-center, CRM, clickstream, and sales-booking data into a governed recommendation→revenue funnel. 150+ logical pipelines as HOCON config (zero bespoke Spark code per table), 7-day first-touch attribution across 5 source systems with no shared key, DQ gates that block publishing to executive dashboards. Deployed across multiple environments and regional configurations.
 
 </td>
 <td width="50%" valign="top">
@@ -254,7 +254,7 @@ A pipeline without freshness and volume signals is not a pipeline. It is a batch
 Schema changes break downstream consumers in ways that don't surface until 3 AM. I design for schema evolution from the start: format-level schema evolution (Iceberg, Avro), contract-based interfaces between producers and consumers, and automated drift detection. The platform should catch schema drift before the business does.
 
 **3. Cost is an engineering responsibility, not a finance report.**
-Cloud costs that cannot be attributed to a team, a pipeline, and a business outcome are unmanaged risk. I build FinOps instrumentation into platforms so cost is visible at the point of architectural decision — not discovered in a monthly invoice. Every join strategy, compaction schedule, and cluster configuration has an economic consequence.
+Cloud costs that cannot be attributed to a team, a pipeline, and a business outcome are unmanaged risk. Every join strategy, compaction schedule, and cluster configuration has an economic consequence — and engineers should feel that consequence at design time, not at invoice time.
 
 **4. High-leverage engineers are force multipliers, not just strong individual contributors.**
 The highest-leverage work I do is not writing the most performant Spark job — it is designing the system that makes the next 10 engineers more productive. That means golden paths, documented decisions, reusable patterns, and mentorship that transfers architectural thinking, not just syntax.
